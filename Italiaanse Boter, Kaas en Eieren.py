@@ -1,3 +1,9 @@
+def print_bord():
+    print(plaats[0], plaats[1], plaats[2])
+    print(plaats[3], plaats[4], plaats[5])
+    print(plaats[6], plaats[7], plaats[8])
+
+
 spelactief = True
 while spelactief:
     print("Welkom bij Italiaanse Boter, Kaas en Eieren")
@@ -5,9 +11,7 @@ while spelactief:
     naamSpeler2 = input("Wat is de naam van speler 2?")
     plaats = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
     plaatsen = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
-    print(plaats[0], plaats[1], plaats[2])
-    print(plaats[3], plaats[4], plaats[5])
-    print(plaats[6], plaats[7], plaats[8])
+    print_bord()
     for turn in range(3):
         while True:
             plaatsSpeler = input(f"Waar wil {naamSpeler1} een steen plaatsen?")
@@ -15,15 +19,11 @@ while spelactief:
                 print("Antwoord met een plaats tussen de 1 en 9")
             elif plaatsSpeler in plaats:
                 plaats[int(plaatsSpeler) - 1] = "X"
-                print(plaats[0], plaats[1], plaats[2])
-                print(plaats[3], plaats[4], plaats[5])
-                print(plaats[6], plaats[7], plaats[8])
+                print_bord()
                 break
             else:
                 print("Deze plaats is bezet")
-            print(plaats[0], plaats[1], plaats[2])
-            print(plaats[3], plaats[4], plaats[5])
-            print(plaats[6], plaats[7], plaats[8])
+            print_bord()
         while True:
             if (plaats[0] == "X" and plaats[1] == "X" and plaats[2] == "X") or (
                     plaats[3] == "X" and plaats[4] == "X" and plaats[5] == "X") or (
@@ -40,15 +40,11 @@ while spelactief:
                     print("Antwoord met een plaats tussen de 1 en 9")
                 elif plaatsSpeler in plaats:
                     plaats[int(plaatsSpeler) - 1] = "O"
-                    print(plaats[0], plaats[1], plaats[2])
-                    print(plaats[3], plaats[4], plaats[5])
-                    print(plaats[6], plaats[7], plaats[8])
+                    print_bord()
                     break
                 else:
                     print("Deze plaats is bezet")
-                print(plaats[0], plaats[1], plaats[2])
-                print(plaats[3], plaats[4], plaats[5])
-                print(plaats[6], plaats[7], plaats[8])
+                print_bord()
     geenDrieOpEenRij = True
     while geenDrieOpEenRij:
         if (plaats[0] == "X" and plaats[1] == "X" and plaats[2] == "X") or (
@@ -77,18 +73,12 @@ while spelactief:
                 verplaats = input(f"Welke steen wil {naamSpeler1} verplaatsen")
                 if verplaats not in plaatsen:
                     print("Antwoord met een plaats tussen de 1 en 9")
-                    print(plaats[0], plaats[1], plaats[2])
-                    print(plaats[3], plaats[4], plaats[5])
-                    print(plaats[6], plaats[7], plaats[8])
+                    print_bord()
                 elif plaats[int(verplaats) - 1] != "X":
                     print("Hier staat geen steen van jou")
-                    print(plaats[0], plaats[1], plaats[2])
-                    print(plaats[3], plaats[4], plaats[5])
-                    print(plaats[6], plaats[7], plaats[8])
+                    print_bord()
                 else:
-                    print(plaats[0], plaats[1], plaats[2])
-                    print(plaats[3], plaats[4], plaats[5])
-                    print(plaats[6], plaats[7], plaats[8])
+                    print_bord()
                     while True:
                         plaatsSpeler = input("Waar wil je deze steen plaatsen?")
                         if plaatsSpeler not in plaatsen:
@@ -97,15 +87,11 @@ while spelactief:
                             plaats[int(verplaats) - 1] = verplaats
                             plaats[int(plaatsSpeler) - 1] = "X"
                             verplaatsjuist = True
-                            print(plaats[0], plaats[1], plaats[2])
-                            print(plaats[3], plaats[4], plaats[5])
-                            print(plaats[6], plaats[7], plaats[8])
+                            print_bord()
                             break
                         else:
                             print("Deze plaats is bezet")
-                        print(plaats[0], plaats[1], plaats[2])
-                        print(plaats[3], plaats[4], plaats[5])
-                        print(plaats[6], plaats[7], plaats[8])
+                        print_bord()
             if (plaats[0] == "X" and plaats[1] == "X" and plaats[2] == "X") or (
                     plaats[3] == "X" and plaats[4] == "X" and plaats[5] == "X") or (
                     plaats[6] == "X" and plaats[7] == "X" and plaats[8] == "X") or (
@@ -122,18 +108,12 @@ while spelactief:
                     verplaats = input(f"Welke steen wil {naamSpeler2} verplaatsen")
                     if verplaats not in plaatsen:
                         print("Antwoord met een plaats tussen de 1 en 9")
-                        print(plaats[0], plaats[1], plaats[2])
-                        print(plaats[3], plaats[4], plaats[5])
-                        print(plaats[6], plaats[7], plaats[8])
+                        print_bord()
                     elif plaats[int(verplaats) - 1] != "O":
                         print("Hier staat geen steen van jou")
-                        print(plaats[0], plaats[1], plaats[2])
-                        print(plaats[3], plaats[4], plaats[5])
-                        print(plaats[6], plaats[7], plaats[8])
+                        print_bord()
                     else:
-                        print(plaats[0], plaats[1], plaats[2])
-                        print(plaats[3], plaats[4], plaats[5])
-                        print(plaats[6], plaats[7], plaats[8])
+                        print_bord()
                         while True:
                             plaatsSpeler = input("Waar wil je deze steen plaatsen?")
                             if plaatsSpeler not in plaatsen:
@@ -142,15 +122,11 @@ while spelactief:
                                 plaats[int(verplaats) - 1] = verplaats
                                 plaats[int(plaatsSpeler) - 1] = "O"
                                 verplaatsjuist = True
-                                print(plaats[0], plaats[1], plaats[2])
-                                print(plaats[3], plaats[4], plaats[5])
-                                print(plaats[6], plaats[7], plaats[8])
+                                print_bord()
                                 break
                             else:
                                 print("Deze plaats is bezet")
-                            print(plaats[0], plaats[1], plaats[2])
-                            print(plaats[3], plaats[4], plaats[5])
-                            print(plaats[6], plaats[7], plaats[8])
+                            print_bord()
     antwoordjuist = False
     while not antwoordjuist:
         antwoord = input("Wil je nog een keer spelen?")

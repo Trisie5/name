@@ -110,7 +110,7 @@ while spelactief:
                     print_bord()
     antwoordjuist = False
     while not antwoordjuist:
-        antwoord = input("Wil je nog een keer spelen?")
+        antwoord = input("Wil je nog een keer spelen?(ja/nee)")
         if antwoord.lower() == "ja":
             antwoordjuist = True
         elif antwoord.lower() == "nee":

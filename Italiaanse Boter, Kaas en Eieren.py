@@ -28,8 +28,8 @@ while spelactief:
     plaats = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
     plaatsen = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
     print_bord()
-    for turn in range(3):
-        while True:
+    for turn in range(3):  # fase 1: 3x om de beurt een steen plaatsen
+        while True:  # speler X
             plaatsSpeler = input(f"Waar wil {naamSpeler1} een steen plaatsen?")
             if plaatsSpeler not in plaatsen:
                 print("Antwoord met een plaats tussen de 1 en 9")
@@ -40,7 +40,7 @@ while spelactief:
             else:
                 print("Deze plaats is bezet")
             print_bord()
-        while True:
+        while True:  # speler O
             if drieopeenrij("X"):
                 break
             plaatsSpeler = input(f"Waar wil {naamSpeler2} een steen plaatsen?")
@@ -54,7 +54,7 @@ while spelactief:
                 print("Deze plaats is bezet")
             print_bord()
     geenDrieOpEenRij = True
-    while geenDrieOpEenRij:
+    while geenDrieOpEenRij:  # fase 2: om de beurt een steen verplaatsen
         if drieopeenrij("X"):
             print(f"{naamSpeler1} heeft gewonnen")
             break
@@ -62,7 +62,7 @@ while spelactief:
             print(f"{naamSpeler2} heeft gewonnen")
             break
         verplaatsjuist = False
-        while not verplaatsjuist:
+        while not verplaatsjuist:  # speler X
             verplaats = input(f"Welke steen wil {naamSpeler1} verplaatsen")
             if verplaats not in plaatsen:
                 print("Antwoord met een plaats tussen de 1 en 9")
@@ -89,7 +89,7 @@ while spelactief:
             print(f"{naamSpeler1} heeft gewonnen")
             break
         verplaatsjuist = False
-        while not verplaatsjuist:
+        while not verplaatsjuist:  # speler O
             verplaats = input(f"Welke steen wil {naamSpeler2} verplaatsen")
             if verplaats not in plaatsen:
                 print("Antwoord met een plaats tussen de 1 en 9")

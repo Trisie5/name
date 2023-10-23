@@ -1,10 +1,12 @@
+# print het bord
 def print_bord():
     print(plaats[0], plaats[1], plaats[2])
     print(plaats[3], plaats[4], plaats[5])
     print(plaats[6], plaats[7], plaats[8])
 
 
-def drieopeenrei(speler):
+# kijkt of er drie op een rij is
+def drieopeenrij(speler):
     if (plaats[0] == speler and plaats[1] == speler and plaats[2] == speler) or (
             plaats[3] == speler and plaats[4] == speler and plaats[5] == speler) or (
             plaats[6] == speler and plaats[7] == speler and plaats[8] == speler) or (
@@ -14,6 +16,8 @@ def drieopeenrei(speler):
             plaats[0] == speler and plaats[4] == speler and plaats[8] == speler) or (
             plaats[2] == speler and plaats[4] == speler and plaats[6] == speler):
         return True
+    else:
+        return False
 
 
 spelactief = True
@@ -37,7 +41,7 @@ while spelactief:
                 print("Deze plaats is bezet")
             print_bord()
         while True:
-            if drieopeenrei("X"):
+            if drieopeenrij("X"):
                 break
             plaatsSpeler = input(f"Waar wil {naamSpeler2} een steen plaatsen?")
             if plaatsSpeler not in plaatsen:
@@ -51,10 +55,10 @@ while spelactief:
             print_bord()
     geenDrieOpEenRij = True
     while geenDrieOpEenRij:
-        if drieopeenrei("X"):
+        if drieopeenrij("X"):
             print(f"{naamSpeler1} heeft gewonnen")
             break
-        if drieopeenrei("O"):
+        if drieopeenrij("O"):
             print(f"{naamSpeler2} heeft gewonnen")
             break
         verplaatsjuist = False
@@ -81,7 +85,7 @@ while spelactief:
                     else:
                         print("Deze plaats is bezet")
                     print_bord()
-        if drieopeenrei("X"):
+        if drieopeenrij("X"):
             print(f"{naamSpeler1} heeft gewonnen")
             break
         verplaatsjuist = False

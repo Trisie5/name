@@ -34,7 +34,7 @@ while spelactief:
             if plaatsSpeler not in plaatsen:
                 print("Antwoord met een plaats tussen de 1 en 9")
             elif plaatsSpeler in plaats:
-                plaats[int(plaatsSpeler) - 1] = "X"
+                plaats[int(plaatsSpeler) - 1] = "X"  # plaatst steen op het bord
                 print_bord()
                 break
             else:
@@ -47,7 +47,7 @@ while spelactief:
             if plaatsSpeler not in plaatsen:
                 print("Antwoord met een plaats tussen de 1 en 9")
             elif plaatsSpeler in plaats:
-                plaats[int(plaatsSpeler) - 1] = "O"
+                plaats[int(plaatsSpeler) - 1] = "O"  # plaatst steen op het bord
                 print_bord()
                 break
             else:
@@ -77,8 +77,8 @@ while spelactief:
                     if plaatsSpeler not in plaatsen:
                         print("Antwoord met een plaats tussen de 1 en 9")
                     elif plaatsSpeler in plaats:
-                        plaats[int(verplaats) - 1] = verplaats
-                        plaats[int(plaatsSpeler) - 1] = "X"
+                        plaats[int(verplaats) - 1] = verplaats  # verwijdert steen van het bord
+                        plaats[int(plaatsSpeler) - 1] = "X"  # plaatst steen op het bord
                         verplaatsjuist = True
                         print_bord()
                         break
@@ -104,8 +104,8 @@ while spelactief:
                     if plaatsSpeler not in plaatsen:
                         print("Antwoord met een plaats tussen de 1 en 9")
                     elif plaatsSpeler in plaats:
-                        plaats[int(verplaats) - 1] = verplaats
-                        plaats[int(plaatsSpeler) - 1] = "O"
+                        plaats[int(verplaats) - 1] = verplaats  # verwijdert steen van het bord
+                        plaats[int(plaatsSpeler) - 1] = "O"  # plaatst steen op het bord
                         verplaatsjuist = True
                         print_bord()
                         break
